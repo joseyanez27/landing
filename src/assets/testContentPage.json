@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Masajes",
+        "description": "Descripcion 1",
+        "image":""
+    },
+    {
+        "title": "Cámara Hiperbárica",
+        "description": "Descripcion 2",
+        "image":""
+    },
+    {
+        "title": "Dermapen",
+        "description": "Descripcion 3",
+        "image":""
+    },
+    {
+        "title": "Aparatología Estética",
+        "description": "Descripcion 4",
+        "image":""
+    },
+    {
+        "title": "Limpieza Facial",
+        "description": "Descripcion 5",
+        "image":""
+    },
+    {
+        "title": "Peeling Facial",
+        "description": "Descripcion 6",
+        "image":""
+    },
+    {
+        "title": "Hifu 4D",
+        "description": "Descripcion 7",
+        "image":""
+    },
+    {
+        "title": "Limpieza de espalda",
+        "description": "Descripcion 8",
+        "image":""
+    },
+    {
+        "title": "Dermatologia",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "image":""
+    }
+]
