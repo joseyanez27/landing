@@ -5,7 +5,8 @@ export const PromotionsContainer = styled.section`
     min-height: 50vh;
     background-image: ${({ bg }) => bg && `url(${bg})`};
     background-repeat: no-repeat;
-    background-size: 100% 70%;
+    background-size: 100% 100%;
+    margin: 64px 0 0 0;
 
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@ export const PromotionContent = styled.div`
 export const PromotionTitle = styled.div`
     background-image: ${({ bg }) => bg && `url(${bg})`};
     background-size: 250px auto;
-    background-position: center 75%;
+    background-position: center 55%;
     background-repeat: no-repeat;
     
     width: 250px;

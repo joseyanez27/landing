@@ -38,7 +38,7 @@ export const DetailsHeaderContent = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
 
     display: flex;
     flex-direction: row;
@@ -49,7 +49,7 @@ export const DetailsHeaderContent = styled.div`
         background-position: center top;
         background-size: 160% 100%;
         width: 100%;
-        height: 45vh;
+        height: 80vh;
     }
     @media screen and (max-width: ${size.sm}) {
         background-image: ${({ bg }) => bg && `url(${bg})`};
@@ -57,17 +57,17 @@ export const DetailsHeaderContent = styled.div`
         background-position: center top;
         background-size: 160% 90%;
         width: 100%;
-        height: 40vh;
+        height: 50vh;
     }
 `;
 
 export const TitleContent = styled.div`
-    width: 60%;
+    width: 55%;
     height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0 0 64px;
+    padding: 250px 0 0 5%;
     
     h1 {
 
@@ -75,19 +75,19 @@ export const TitleContent = styled.div`
     }
 
     @media screen and (max-width: ${size.md}) {
-        width: 70%;
-        height: 30vh;
+        width: 60%;
+        height: 40vh;
         
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 0 0 8px;
+        padding: 200px 0 0 5%;
     }
 
     @media screen and (max-width: ${size.sm}) {
         width: 60%;
         height: 30vh;
-        padding: 0 0 0 32px;
+        padding: 64px 0 0 5%;
 
         h1 {
         font-size: 40px;
@@ -164,7 +164,7 @@ export const ButtonAgenda = styled.a`
 `;
 
 export const ButtonWhatsapp = styled.a`
-    width: 150px;
+    width: 250px;
     padding: 4px 20px;
     background: rgb(69,183,31);
     color: rgb(255,255,255);

@@ -14,6 +14,8 @@ import defaultImg from '../assets/images/img-default.jpg'
 function ServiceItem({ id, title, subtitle, mainImage }) {
     const history = useHistory();
 
+    
+
     const handleSubmit = e => {
         e.preventDefault();
         history.push(`/servicio/${id}`)

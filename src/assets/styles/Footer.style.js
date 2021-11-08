@@ -123,11 +123,11 @@ export const FooterRespAbout = styled.div`
     flex-direction: column;
     gap: 4px;
     h3 {
-        font: normal normal normal 16px abeezee-regular;
+        font: normal normal normal 16px monserrat;
         color: rgb(147,68,165);
     }
     p {
-        font: normal normal normal 12px abeezee-regular;
+        font: normal normal normal 12px monserrat;
         color: rgb(147,68,165);
     }
 `;
@@ -143,7 +143,7 @@ export const FooterRespInfo = styled.div`
     flex-direction: column;
     gap: 8px;
     h3 {
-        font: normal normal normal 16px abeezee-regular;
+        font: normal normal normal 16px monserrat;
         color: rgb(147,68,165);
         margin: 0px;
         padding: 0px;
@@ -167,7 +167,7 @@ export const FooterRespInfoItem = styled.div`
     }
 
     p {
-        font: normal normal normal 12px abeezee-regular;
+        font: normal normal normal 12px monserrat;
         color: rgb(147,68,165);
     }
 `;

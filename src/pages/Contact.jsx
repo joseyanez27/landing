@@ -1,7 +1,8 @@
-import React from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
 import { ReactSVG } from 'react-svg'
+import Swal from 'sweetalert2'
 
 import {
     ContactContainer,
@@ -9,9 +10,6 @@ import {
     ContactContent,
     ContactInfo,
     InfoContent,
-    InfoA,
-    InfoB,
-    InfoMap,
     ContactText,
     ContactForm,
     ContactPhone,
@@ -21,24 +19,48 @@ import {
     Field,
     ButtonsContent,
     ButtonWhatsapp,
-    ButtonSend
+    ButtonSend,
+    Info
 } from '../assets/styles/Contact.style'
 import { Paragraph, SubTitle } from '../assets/fonts/typesetting'
-import Map from './gui/Map'
 
 import titleTracing from '../assets/images/tracing-titles.png'
 import iconPhone from '../assets/icons/phone.svg'
 import iconEmail from '../assets/icons/email.svg'
 import iconClock from '../assets/icons/clock.svg'
-import iconLocation from '../assets/icons/location.svg'
 import iconWhatsapp from '../assets/icons/whatsapp.svg'
-import Swal from 'sweetalert2'
+import logo from '../assets/images/logo-black.png'
 
+import { whatsapp } from '../assets/common/external-links'
 
 
 function Contact() {
+    console.log(whatsapp);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    const [contactPhone, setContactPhone] = useState()
+    const [contactEmail, setContactEmail] = useState()
+    const [contactSchudle, setContactSchudle] = useState()
+    const [contactWhatsapp, setContactWhatsapp] = useState()
+
+    useEffect(() => {
+        var config = {
+            method: 'get',
+            url: 'https://apibrujasblancas.venatici.cl/contact/1'
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(response.data.publicAt);
+                setContactPhone('+56 '+response.data.phone)
+                setContactEmail(response.data.email)
+                setContactSchudle(response.data.publicAt)
+                setContactWhatsapp('https://wa.me/56'+response.data.phone)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, [])
 
     const onSubmit = data => {
         var formdata = new FormData();
@@ -87,50 +109,34 @@ function Contact() {
             <ContactContent>
                 <ContactInfo>
                     <InfoContent>
-                        <InfoA>
+                        <Info>
+                            <img src={logo} />
                             <ContactPhone>
                                 <label>
                                     <ReactSVG src={iconPhone} alt="phone" />
                                 </label>
                                 <ContactText>
-                                    <Paragraph>+56 9 8765 4321</Paragraph>
+                                    <Paragraph>{contactPhone}</Paragraph>
                                 </ContactText>
                             </ContactPhone>
-                            <ContactSchedule>
-                                <label>
-                                    <ReactSVG src={iconClock} alt="schedule" />
-                                </label>
-                                <ContactText>
-                                    <Paragraph>Lunes a viernes:<br /> 9.30 a 18.00 hrs.</Paragraph>
-                                    <Paragraph>Sabados:<br /> 10.00 a 14.30 hrs.</Paragraph>
-                                </ContactText>
-                            </ContactSchedule>
-                        </InfoA>
-                        <InfoB>
                             <ContactEmail>
                                 <label>
                                     <ReactSVG src={iconEmail} alt="email" />
                                 </label>
                                 <ContactText>
-                                    <Paragraph>contacto@esteticaandaluz.cl</Paragraph>
+                                    <Paragraph>{contactEmail}</Paragraph>
                                 </ContactText>
                             </ContactEmail>
-
-                            <ContactLocation>
+                            <ContactSchedule>
                                 <label>
-                                    <ReactSVG src={iconLocation} />
+                                    <ReactSVG src={iconClock} alt="schedule" />
                                 </label>
                                 <ContactText>
-                                    <Paragraph>
-                                        Antonio Bellet 77, Oficina 601. Providencia. Cerca del Metro Pedro de Valdivia.
-                                    </Paragraph>
+                                    <Paragraph>{contactSchudle}</Paragraph>
                                 </ContactText>
-                            </ContactLocation>
-                        </InfoB>
+                            </ContactSchedule>
+                        </Info>
                     </InfoContent>
-                    <InfoMap>
-                        <Map />
-                    </InfoMap>
                 </ContactInfo>
                 <ContactForm onSubmit={handleSubmit(onSubmit)}>
                     <Field>
@@ -155,7 +161,8 @@ function Contact() {
                         {errors.message && <span>Este campo es necesario.</span>}
                     </Field>
                     <ButtonsContent>
-                        <ButtonWhatsapp href="https://api.whatsapp.com/send?phone=56987654321"><ReactSVG src={iconWhatsapp} />Whatsapp</ButtonWhatsapp>
+                        {/* TODO: Agregar redireccionamiento a whatsapp */}
+                        <ButtonWhatsapp href={contactWhatsapp}><ReactSVG src={iconWhatsapp} />Whatsapp</ButtonWhatsapp>
                         <ButtonSend type="submit">Enviar</ButtonSend>
                     </ButtonsContent>
                 </ContactForm>

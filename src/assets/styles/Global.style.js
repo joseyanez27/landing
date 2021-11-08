@@ -1,20 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-import { abeezee, cattleya } from "../fonts/fonts";
+import { patrizia, monserrat } from "../fonts/fonts";
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: 'abeezee-regular';
-        src: url(${abeezee.regular}) format('woff');
+        font-family: 'patrizia';
+        src: url(${patrizia.regular}) format('woff');
     }
 
-    @font-face {
-        font-family: 'abeezee-italic';
-        src: url(${abeezee.italic}) format('woff');
-    }
 
     @font-face {
-        font-family: 'cattleya';
-        src: url(${cattleya.regular}) format('woff');
+        font-family: 'monserrat';
+        src: url(${monserrat.regular}) format('woff');
     }
 
     * {

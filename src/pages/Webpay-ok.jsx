@@ -6,7 +6,7 @@ import {
     WebpayContent,
     Card
 } from '../assets/styles/Webpay.style'
-import { WebpaySubtitle, WebpayTitle } from '../assets/fonts/typesetting';
+import { WebpayTitle } from '../assets/fonts/typesetting';
 
 import backgroundTracing1 from '../assets/images/tracing-webpay1.png'
 import backgroundTracing2 from '../assets/images/tracing-webpay2.png'
@@ -23,7 +23,7 @@ function WebpaySuccess({ id }) {
         <WebpayContainer bg={backgroundTracing1}>
             <WebpayContent bg={backgroundTracing2}>
                 <Card>
-                    <img src={logo} />
+                    <img src={logo} alt='logo-img'/>
                     <WebpayTitle>¡Operación exitosa!</WebpayTitle>
                     {/*<WebpaySubtitle>N° de transacción: {id}</WebpaySubtitle>*/}
                     <input type="button" value="← Volver al sitio" onClick={backPage} />

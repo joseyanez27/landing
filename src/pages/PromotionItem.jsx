@@ -15,7 +15,7 @@ function PromotionItem({ id, mainImage }) {
 
     const BuyPromo = () => {
         localStorage.setItem('webpay', true)
-        history.push(`/promocion/${id}`)
+        //history.push(`/promocion/${id}`)
     }
 
     return (

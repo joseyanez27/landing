@@ -12,10 +12,7 @@ function Services() {
   useEffect(() => {
     var config = {
       method: "get",
-      url: "https://api.esteticaandaluz.cl/services",
-      headers: {
-        Authorization: "Bearer e395f90a8faaa5f1b8f86f8b7bd7d55ee908c978",
-      },
+      url: "https://apibrujasblancas.venatici.cl/services"
     };
 
     axios(config)

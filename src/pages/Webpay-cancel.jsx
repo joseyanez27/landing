@@ -23,7 +23,7 @@ function WebpayCancel() {
         <WebpayContainer bg={backgroundTracing1}>
             <WebpayContent bg={backgroundTracing2}>
                 <Card>
-                    <img src={logo} />
+                    <img src={logo} alt='logo-img'/>
                     <WebpayTitle>La transacción fue cancelada.</WebpayTitle>
                     <input type="button" value="← Volver al sitio web" onClick={backPage} />
                 </Card>

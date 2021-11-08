@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReactSVG } from 'react-svg'
+import axios from 'axios'
 
 import {
     FooterContainer,
@@ -21,73 +22,101 @@ import footerTracing from '../../assets/images/tracing-footer.png'
 import logo from '../../assets/images/logo.png'
 import iconPhone from '../../assets/icons/phone.svg'
 import iconEmail from '../../assets/icons/email.svg'
-import iconLocation from '../../assets/icons/location.svg'
+import iconSchudle from '../../assets/icons/clock.svg'
 import iconFacebook from '../../assets/icons/facebook.svg'
 import iconInstagram from '../../assets/icons/instagram.svg'
 
+import { facebook, instagram } from '../../assets/common/external-links'
+
 function Footer() {
-    const facebookURL = 'https://www.facebook.com/esteticaandaluz/';
-    const instagramURL = 'https://www.instagram.com/esteticaandaluz/?hl=es'
+    const [phone, setPhone] = useState()
+    const [email, setEmail] = useState()
+    const [schudle, setSchudle] = useState()
+    const [aboutUs, setAboutUs] = useState()
+    const [facebook, setFacebook] = useState()
+    const [instagram, setInstagram] = useState()
+
+    useEffect(() => {
+        var config = {
+            method: 'get',
+            url: 'https://apibrujasblancas.venatici.cl/contact/1'
+        };
+
+        axios(config)
+            .then(function (response) {
+                setPhone('+56 ' + response.data.phone)
+                setEmail(response.data.email)
+                setSchudle(response.data.publicAt)
+                setFacebook(response.data.facebook)
+                setInstagram(response.data.instagram)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        setAboutUs('[FALTA INFORMACION DEL EMPRENDIMIENTO]')
+    }, [])
 
     return (
         <>
             <FooterContainer bg={footerTracing}>
                 <FooterContent>
-                    <img src={logo} alt="logo"/>
+                    <img src={logo} alt="logo" />
                 </FooterContent>
                 <hr />
                 <FooterContent>
                     <Slogan>Acerca de nosotros</Slogan>
-                    <Paragraph>Somos un centro de estética integral con profesionales comprometidos en brindar al paciente el mejor resultado en tratamientos faciales y corporales con equipos de tecnología avanzada y un grato ambiente, basado en el respeto, seguridad y atención de calidad.</Paragraph>
+                    <Paragraph>{aboutUs}</Paragraph>
                 </FooterContent>
                 <hr />
                 <FooterContent>
                     <FooterContactInfo>
                         <ReactSVG src={iconPhone} />
-                        <Paragraph>+56987654321</Paragraph>
+                        <Paragraph>{phone}</Paragraph>
                     </FooterContactInfo>
                     <FooterContactInfo>
                         <ReactSVG src={iconEmail} />
-                        <Paragraph>contacto@esteticaandaluz.cl</Paragraph>
+                        <Paragraph>{email}</Paragraph>
                     </FooterContactInfo>
                     <FooterContactInfo>
-                        <ReactSVG src={iconLocation} />
-                        <Paragraph>Antonio Bellet 77, Oficina 601. Providencia. Cerca del Metro Pedro de Valdivia.</Paragraph>
+                        <ReactSVG src={iconSchudle} />
+                        <Paragraph>{ schudle }</Paragraph>
                     </FooterContactInfo>
                 </FooterContent>
                 <hr />
                 <FooterContent>
-                    <a href={facebookURL}><ReactSVG src={iconFacebook} /></a>
-                    <a href={instagramURL}><ReactSVG src={iconInstagram} /></a>
+                    <a href={facebook}><ReactSVG src={iconFacebook} /></a>
+                    <a href={instagram}><ReactSVG src={iconInstagram} /></a>
                 </FooterContent>
             </FooterContainer>
+            {/* =============================== Footer responsivo */}
             <FooterContainerResponsive>
                 <FooterContentResponsive bg={footerTracing}>
                     <LeftContent>
                         <FooterLogo src={logo} />
                         <FooterRespSN>
-                            <a href={facebookURL}><ReactSVG src={iconFacebook} /></a>
-                            <a href={instagramURL}><ReactSVG src={iconInstagram} /></a>
+                            <a href={facebook}><ReactSVG src={iconFacebook} /></a>
+                            <a href={instagram}><ReactSVG src={iconInstagram} /></a>
                         </FooterRespSN>
                     </LeftContent>
                     <RightContent>
                         <FooterRespAbout>
                             <Slogan>Sobre nosotros</Slogan>
-                            <Paragraph>Somos un centro de estética integral con profesionales comprometidos en brindar al cliente el mejor resultado en tratamientos faciales y corporales con equipos de tecnología avanzada y un grato ambiente, basado en el respeto, seguridad y atención de calidad.</Paragraph>
+                            <Paragraph>{ aboutUs }</Paragraph>
                         </FooterRespAbout>
                         <FooterRespInfo>
                             <Slogan>Contacto</Slogan>
                             <FooterRespInfoItem>
-                                <ReactSVG src={iconPhone} alt="phone"/>
-                                <Paragraph>+56 9 7958 7314</Paragraph>
+                                <ReactSVG src={iconPhone} alt="phone" />
+                                <Paragraph>{phone}</Paragraph>
                             </FooterRespInfoItem>
                             <FooterRespInfoItem>
                                 <ReactSVG src={iconEmail} />
-                                <Paragraph>contacto@esteticaandaluz.cl</Paragraph>
+                                <Paragraph>{email}</Paragraph>
                             </FooterRespInfoItem>
                             <FooterRespInfoItem>
-                                <ReactSVG src={iconLocation} />
-                                <Paragraph>Antonio Bellet 77, Oficina 601. Providencia. Cerca del metro Pedro de Valdivia.</Paragraph>
+                                <ReactSVG src={iconSchudle} />
+                                <Paragraph>{schudle}</Paragraph>
                             </FooterRespInfoItem>
                         </FooterRespInfo>
                     </RightContent>

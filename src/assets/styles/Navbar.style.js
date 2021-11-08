@@ -15,7 +15,7 @@ export const NavContent = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    
     
     
     @media screen and (max-width: ${size.md}) {
@@ -25,8 +25,8 @@ export const NavContent = styled.div`
 `;
 
 export const NavLogo = styled.img`
-    width: 200px;
-    margin: 10px 26px;
+    width: 150px;
+    margin: 16px;
     fill: #FFF;
 
     @media screen and (max-width: ${size.md}) {
@@ -36,11 +36,11 @@ export const NavLogo = styled.img`
 
 export const NavItems = styled.div`
     display: flex;
-    width: 20%;
-    height: 40px;
+    width: 40%;
+    height: 150px;
     justify-content: space-between;
     align-items: center;
-    gap: 3vw;
+    gap: 10px;
     
 `;
 
@@ -51,7 +51,7 @@ export const NavLink = styled.a`
 
     p{
         color: #FFF;
-        font: normal normal normal 16px abeezee-regular;
+        font: normal normal normal 16px monserrat;
     }
 `;
 

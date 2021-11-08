@@ -1,18 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import {
     Route,
     Switch,
-    Redirect,
     BrowserRouter
 } from "react-router-dom";
 
-import Navbar from '../pages/gui/Navbar'
 import Main from './HomePage';
 import Service from './ServicePage'
 import PromoDetail from '../pages/PromotionBuy'
-import ContextContainer from '../components/contextContainer';
+import ContextContainer from '../contexts/contextContainer';
 import WebpaySuccess from '../pages/Webpay-ok';
 import WebpayCancel from '../pages/Webpay-cancel';
 import WebpayError from '../pages/Webpay-error';

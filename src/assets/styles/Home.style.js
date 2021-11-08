@@ -31,6 +31,7 @@ export const HomeHeader = styled.div`
     height: 100%;
     display: flex;
 
+
     @media screen and (max-width: ${size.lg}) {
         background-size: 120% auto;
     }
@@ -44,11 +45,16 @@ export const HomeTitles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
     padding: 16vw 0 0 0;
 
     h1 { //Título
         color: #FFF;
+        width: 90%;
+        font-weight: bold;
+        font-size: 8vw;
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 
     h3 { // Slogan
@@ -57,14 +63,16 @@ export const HomeTitles = styled.div`
 
     @media screen and (max-width: ${size.lg}) {
         width: 55%;
-        h1 { font: normal normal normal 8vw cattleya; }
-        h3 { font: normal normal normal 3vw abeezee-regular; }
+        margin: 2px 0 0 0;
+        h1 { font: normal normal normal 8vw patrizia; font-weight: bold; text-align: center; }
+        h3 { font: normal normal normal 3vw monserrat; font-weight: bold; }
     }
     @media screen and (max-width: ${size.md}) {
         width: 70%;
-        padding: 28vw 0 0 0;
-        h1 { font: normal normal normal 10vw cattleya; }
-        h3 { font: normal normal normal 3vw abeezee-regular; }
+        margin: 12vh 0;
+        padding: 8vw 0 0 0;
+        h1 { font: normal normal normal 10vw patrizia; font-weight: bold; text-align: center; }
+        h3 { font: normal normal normal 3vw monserrat; font-weight: bold; }
     }
 
 `;
@@ -77,7 +85,7 @@ export const HomeBody = styled.div`
     align-items: center;
 
     img {
-        width: 500px;
+        width: 400px;
     }
 
 `;
@@ -116,8 +124,8 @@ export const BodyContent = styled.div`
 
     @media screen and (max-width: ${size.md}) {
         width: 90%;
-        h3 { font: normal normal normal 6vw abeezee-regular; }
-        p { font: normal normal normal 3vw abeezee-regular; }
+        h3 { font: normal normal normal 6vw monserrat; }
+        p { font: normal normal normal 3vw monserrat; }
         hr { height: 22vw; }
     }
 
@@ -128,7 +136,7 @@ export const Button = styled.button`
     border-radius: 0;
     margin: 10px 16px;
     padding: 10px;
-    font: normal normal normal 22px/30px abeezee-regular;
+    font: normal normal normal 22px/30px monserrat;
     background-color: rgb(147,68,165);
     color: #FFF;
     cursor: pointer;
@@ -144,7 +152,7 @@ export const HomeButton = styled.a`
     border-radius: 0;
     margin: 64px 16px;
     padding: 20px 80px;
-    font: normal normal normal 22px/30px abeezee-regular;
+    font: normal normal normal 22px/30px monserrat;
     background: rgb(147,68,165);
     color: rgb(255,255,255);
     border: none;

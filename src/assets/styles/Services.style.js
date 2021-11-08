@@ -7,7 +7,7 @@ export const ServicesContainer = styled.section`
     max-height: auto;
     background-image: ${({ bg }) => bg && `url(${bg})`};
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 100% 90%;
     
     display: flex;
     justify-content: center;

@@ -68,7 +68,9 @@ export const ContactInfo = styled.div`
 
 export const InfoContent = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    display: flex;
+    gap: 16px;
 
     @media screen and (max-width: ${size.sm}) {
         padding: 0 8px;
@@ -76,15 +78,23 @@ export const InfoContent = styled.div`
     
 `;
 
-export const InfoA = styled.div`
+export const Info = styled.div`
+    width: 100%;
     display: flex;
+    padding: 0 32px;
     flex-direction: column;
-    width: 50%;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
+
+    img {
+        width: 250px;
+    }
 
     @media screen and (max-width: ${size.sm}) {
         display: flex;
-        gap: 16px;
+        padding: 16px;
+        gap: 8px;
     }
 `;
 
@@ -99,18 +109,18 @@ export const ContactText = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    p {font: normal normal normal 18px abeezee-regular;}
+    p {font: normal normal normal 18px monserrat;}
 
     @media screen and (max-width: ${size.md}) {
         height: 50px;
-        p {font: normal normal normal 13px abeezee-regular;}
+        p {font: normal normal normal 13px monserrat;}
     }
 `;
 
 export const ContactPhone = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 65%;
     gap: 8px;
     fill: #9344a5;
 
@@ -125,7 +135,7 @@ export const ContactPhone = styled.div`
 `;
 
 export const ContactEmail = styled.div`
-    width: 100%;
+    width: 65%;
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -144,7 +154,7 @@ export const ContactEmail = styled.div`
 export const ContactSchedule = styled.div`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 65%;
     gap: 8px;
     fill: #9344a5;
 
@@ -230,7 +240,7 @@ export const ButtonWhatsapp = styled.a`
     border: none;
     border-radius: 0;
     padding: 10px 16px 10px 10px;
-    font: normal normal normal 16px abeezee-regular;
+    font: normal normal normal 16px monserrat;
     background-color: rgb(69,183,31);
     color: #FFF;
     cursor: pointer;
@@ -261,7 +271,7 @@ export const ButtonSend = styled.button`
     border: none;
     border-radius: 0;
     padding: 10px;
-    font: normal normal normal 16px abeezee-regular;
+    font: normal normal normal 16px monserrat;
     background-color: rgb(69,183,31);
     color: #FFF;
     cursor: pointer;

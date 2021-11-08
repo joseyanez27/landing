@@ -6,13 +6,14 @@ import { PromotionContent, PromotionsContainer, PromotionTitle } from '../assets
 import promotionsTracing from '../assets/images/tracing-promotions.png'
 import titleTracing from '../assets/images/tracing-titles.png'
 import PromotionItem from './PromotionItem'
+import image from '../assets/images/test-image.png'
 
 
 function Promotions() {
     const [data, setData] = useState()
 
     useEffect(() => {
-        var config = {
+        /*var config = {
             method: 'get',
             url: 'https://api.esteticaandaluz.cl/promos',
             headers: {}
@@ -25,7 +26,7 @@ function Promotions() {
             })
             .catch(function (error) {
                 console.log(error);
-            });
+            });*/
     }, [])
 
     
@@ -36,10 +37,13 @@ function Promotions() {
                 <SubTitle>Promociones</SubTitle>
             </PromotionTitle>
             <PromotionContent>
-                    {(Array.isArray(data)) ?
+                    {/*(Array.isArray(data)) ?
                         data.map(promo =>
                             <PromotionItem {...promo} />
-                        ) : <Paragraph>Sin servicios</Paragraph>}
+                        ) : <Paragraph>Sin servicios</Paragraph>*/}
+                <PromotionItem mainImage={image} />
+                <PromotionItem mainImage={image} />
+                <PromotionItem mainImage={image} />
             </PromotionContent>
         </PromotionsContainer>
     )

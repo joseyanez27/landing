@@ -1,12 +1,11 @@
-import abeezeeItalic from "./abeezee/ABeeZee-Italic.ttf"
-import abeezeeRegular from "./abeezee/ABeeZee-Regular.ttf"
-import cattleyaRegular from "./cattleya/Cattleya.ttf"
+import monserrat_regular from "./montserrat/Montserrat-Regular.ttf"
+import patrizia_regular from "./patrizia/Patrizia-Regular.ttf"
 
-export const abeezee = {
-    regular: abeezeeRegular,
-    italic: abeezeeItalic
+
+export const monserrat = {
+    regular: monserrat_regular
 }
 
-export const cattleya = {
-    regular: cattleyaRegular
+export const patrizia = {
+    regular: patrizia_regular
 }

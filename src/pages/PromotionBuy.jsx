@@ -60,8 +60,7 @@ function PromotionBuy() {
     useEffect(() => {
         var config = {
             method: 'get',
-            url: `https://api.esteticaandaluz.cl/promos/${id}`,
-            headers: {}
+            url: `https://api.esteticaandaluz.cl/promos/${id}`
         };
 
         axios(config)
@@ -98,7 +97,6 @@ function PromotionBuy() {
 
             axios(config)
                 .then(function (response) {
-                    const toWebpay = Object.values(response)
                     console.log(response.data);
                     window.location.assign(response.data)
                 })

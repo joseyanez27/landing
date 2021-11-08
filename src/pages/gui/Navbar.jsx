@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { ReactSVG } from 'react-svg'
+import axios from 'axios'
 
 import {
     Nav,
@@ -16,16 +17,33 @@ import {
 import { Paragraph } from '../../assets/fonts/typesetting'
 import Menu from './Menu'
 
-import facebook from '../../assets/icons/facebook.svg'
-import instagram from '../../assets/icons/instagram.svg'
-import logoWhite from '../../assets/images/logo-white.png'
+import iconFacebook from '../../assets/icons/facebook.svg'
+import iconInstagram from '../../assets/icons/instagram.svg'
+import logoWhite from '../../assets/images/logo-white-fix.png'
 import iconMenu from '../../assets/icons/menu.svg'
 
 function Navbar() {
-    const facebookURL = 'https://www.facebook.com/esteticaandaluz/';
-    const instagramURL = 'https://www.instagram.com/esteticaandaluz/?hl=es'
-
     const [isOpen, setIsOpen] = useState(false);
+
+    const [facebook, setFacebook] = useState()
+    const [instagram, setInstagram] = useState()
+
+    useEffect(() => {
+        var config = {
+            method: 'get',
+            url: 'https://apibrujasblancas.venatici.cl/contact/1'
+        };
+
+        axios(config)
+            .then(function (response) {
+                setFacebook(response.data.facebook)
+                setInstagram(response.data.instagram)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, [])
 
     return (
         <Nav>
@@ -56,8 +74,8 @@ function Navbar() {
                 </NavItems>
             </NavContent>
             <SocialNetworks>
-                <a href={facebookURL}><ReactSVG src={facebook} /></a>
-                <a href={instagramURL}><ReactSVG src={instagram} /></a>
+                <a href={facebook}><ReactSVG src={iconFacebook} /></a>
+                <a href={instagram}><ReactSVG src={iconInstagram} /></a>
             </SocialNetworks>
 
             <MenuContent>
@@ -67,8 +85,8 @@ function Navbar() {
                 <Menu setIsOpen={setIsOpen} isOpen={isOpen} />
                 <NavLogo src={logoWhite} alt="logo" />
                 <MenuSocialNetworks>
-                    <a href={facebookURL}><ReactSVG src={facebook} /></a>
-                    <a href={instagramURL}><ReactSVG src={instagram} /></a>
+                    <a href={facebook}><ReactSVG src={iconFacebook} /></a>
+                    <a href={instagram}><ReactSVG src={iconInstagram} /></a>
                 </MenuSocialNetworks>
 
             </MenuContent>

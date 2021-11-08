@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-import { ReactSVG } from 'react-svg'
+//import { ReactSVG } from 'react-svg'
 
 import {
     DetailsContainer,
@@ -15,12 +15,12 @@ import {
     PhotosContent,
     ButtonsContent,
     ButtonAgenda,
-    ButtonWhatsapp
+    //ButtonWhatsapp
 } from '../assets/styles/ServiceDetails.style'
 
 import detailsTracing from '../assets/images/tracing-details-service.png'
 import detailSubTitleTracing from '../assets/images/tracing-titles.png'
-import iconWatsapp from '../assets/icons/whatsapp.svg'
+//import iconWatsapp from '../assets/icons/whatsapp.svg'
 import { Paragraph, SubTitle, Title } from '../assets/fonts/typesetting'
 import Footer from './gui/Footer'
 
@@ -36,6 +36,8 @@ function ServiceDetail() {
     const [images, setImages] = useState();
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+
         var config = {
             method: 'get',
             url: `https://api.esteticaandaluz.cl/services/${id}`,
@@ -44,10 +46,10 @@ function ServiceDetail() {
 
         axios(config)
             .then(function (response) {
-                const mainImage = JSON.stringify(response.data.mainImage);
-                const title = JSON.stringify(response.data.title);
-                const description = JSON.stringify(response.data.description);
-                const images = JSON.stringify(response.data.images);
+                const mainImage = response.data.mainImage;
+                const title = response.data.title;
+                const description = response.data.description;
+                const images = response.data.images;
                 setMainImage(mainImage)
                 setTitle(title)
                 setDescription(description)
@@ -94,7 +96,7 @@ function ServiceDetail() {
                     </>}
                 <ButtonsContent>
                     <ButtonAgenda href="https://esteticaandaluz.agendapro.com/cl/workflow?local=3536"><Paragraph>¡Agenda tu hora!</Paragraph></ButtonAgenda>
-                    <ButtonWhatsapp href="https://api.whatsapp.com/send?phone=56987654321"><ReactSVG src={iconWatsapp} /> <Paragraph>Whatsapp</Paragraph></ButtonWhatsapp>
+                    {/*<ButtonWhatsapp href="https://api.whatsapp.com/send?phone=56987654321"><ReactSVG src={iconWatsapp} /> <Paragraph>Whatsapp</Paragraph></ButtonWhatsapp>*/}
                 </ButtonsContent>
             </DetailsBody>
             <Footer />
