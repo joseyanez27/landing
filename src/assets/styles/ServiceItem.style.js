@@ -64,13 +64,13 @@ export const ItemContent = styled.div`
     h2 {
         min-height: 40px;
         text-align: center;
+        vertical-align: middle;
         font-size: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
         color: rgb(147,68,165);
     }
-
     p {
         min-height: 50px;
         text-align: center;
@@ -90,6 +90,18 @@ export const ItemContent = styled.div`
         h2 {font: normal normal normal 32px patrizia;}
         p {font: normal normal normal 12px monserrat;}
     }
+`;
+
+export const ItemHeader = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ItemBody = styled.div`
+
 `;
 
 export const ButtonService = styled.a`

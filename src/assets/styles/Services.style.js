@@ -3,7 +3,7 @@ import size from "../config/PageSize"
 
 export const ServicesContainer = styled.section`
     width: 100%;
-    min-height: 155vh;
+    min-height: 55vh;
     max-height: auto;
     background-image: ${({ bg }) => bg && `url(${bg})`};
     background-repeat: no-repeat;

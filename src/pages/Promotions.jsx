@@ -13,40 +13,38 @@ function Promotions() {
     const [data, setData] = useState()
 
     useEffect(() => {
-        /*var config = {
+        var config = {
             method: 'get',
-            url: 'https://api.esteticaandaluz.cl/promos',
+            url: 'https://apibrujasblancas.venatici.cl/promotions',
             headers: {}
         };
 
         axios(config)
             .then(function (response) {
-                var dataApi = Object.values(response.data);
-                setData(dataApi)
+                //console.log(response.data.length);
+                setData(response.data)
             })
             .catch(function (error) {
                 console.log(error);
-            });*/
+            });
     }, [])
 
-    
 
-    return (
+
+    return (data.length > 0) ? (
         <PromotionsContainer id='promociones' bg={promotionsTracing}>
             <PromotionTitle bg={titleTracing}>
                 <SubTitle>Promociones</SubTitle>
             </PromotionTitle>
             <PromotionContent>
-                    {/*(Array.isArray(data)) ?
-                        data.map(promo =>
-                            <PromotionItem {...promo} />
-                        ) : <Paragraph>Sin servicios</Paragraph>*/}
-                <PromotionItem mainImage={image} />
-                <PromotionItem mainImage={image} />
-                <PromotionItem mainImage={image} />
+                {(Array.isArray(data)) ?
+                    data.map(promo =>
+                        <PromotionItem {...promo} />
+                    ) : <Paragraph>Sin servicios</Paragraph>
+                }
             </PromotionContent>
         </PromotionsContainer>
-    )
+    ) : <></>
 }
 
 export default Promotions
