@@ -17,7 +17,7 @@ export const ServiceItemContainer = styled.div`
 export const ServiceContent = styled.div`
     background: rgba(255,255,255,1);
     background-image: ${({ bg }) => bg && `url(${bg})`};
-    background-size: auto 320px;
+    background-size: 322px 322px;
     background-position: center center;
     background-repeat: no-repeat;
     box-shadow: 0px 0px 5px rgba(151, 151, 151, 1);

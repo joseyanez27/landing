@@ -38,7 +38,7 @@ export const NavItems = styled.div`
     display: flex;
     width: 40%;
     height: 150px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
     

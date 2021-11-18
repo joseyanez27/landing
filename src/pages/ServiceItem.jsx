@@ -12,7 +12,7 @@ import {
 import { Paragraph, SubTitle } from '../assets/fonts/typesetting'
 import defaultImg from '../assets/images/img-default.jpg'
 
-function ServiceItem({ id, title, subtitle, mainImage }) {
+function ServiceItem({ id, title, subtitle, image }) {
     const history = useHistory();
 
 
@@ -24,7 +24,7 @@ function ServiceItem({ id, title, subtitle, mainImage }) {
 
     return (
         <ServiceItemContainer >
-            <ServiceContent bg={mainImage !== undefined ? mainImage : defaultImg}>
+            <ServiceContent bg={image !== undefined ? image : defaultImg}>
                 <ServiceCard>
                     <ItemContent>
                         <ItemHeader>

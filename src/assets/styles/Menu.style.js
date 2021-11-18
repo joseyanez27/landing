@@ -72,7 +72,7 @@ export const NavLink = styled.a`
 
     * {
       color: #45b71f;
-      font: normal normal normal 20px abeezee-regular;
+      font: normal normal normal 20px monserrat;
     }
 
     *:hover {

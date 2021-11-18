@@ -31,7 +31,7 @@ function Promotions() {
 
 
 
-    return (data.length > 0) ? (
+    return (data !== undefined && data.length > 0) ? (
         <PromotionsContainer id='promociones' bg={promotionsTracing}>
             <PromotionTitle bg={titleTracing}>
                 <SubTitle>Promociones</SubTitle>

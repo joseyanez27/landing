@@ -61,11 +61,11 @@ function Navbar() {
                             <Paragraph>Servicios</Paragraph>
                         </HashLink>
                     </NavLink>
-                    <NavLink>
+                    {/*<NavLink>
                         <HashLink smooth to="/#promociones">
                             <Paragraph>Promociones</Paragraph>
                         </HashLink>
-                    </NavLink>
+                    </NavLink>*/}
                     <NavLink>
                         <HashLink smooth to="/#contacto">
                             <Paragraph>Contacto</Paragraph>

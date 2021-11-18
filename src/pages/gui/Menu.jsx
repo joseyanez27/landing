@@ -9,6 +9,7 @@ import {
 } from '../../assets/styles/Menu.style'
 
 import iconClose from '../../assets/icons/delete.svg'
+import { Paragraph } from '../../assets/fonts/typesetting'
 
 function Menu({ setIsOpen, isOpen }) {
 
@@ -29,12 +30,12 @@ function Menu({ setIsOpen, isOpen }) {
                     </HashLink>
                 </NavLink>
                 <hr />
-                <NavLink onClick={() => setIsOpen(false)}>
+                {/*<NavLink onClick={() => setIsOpen(false)}>
                     <HashLink smooth to="#promociones">
                         Promociones
                     </HashLink>
-                </NavLink>
-                <hr />
+                    </NavLink>
+                <hr />*/}
                 <NavLink onClick={() => setIsOpen(false)}>
                     <HashLink smooth to="#contacto">
                         Contacto

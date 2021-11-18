@@ -40,15 +40,15 @@ function ServiceDetail() {
 
         var config = {
             method: 'get',
-            url: `https://api.esteticaandaluz.cl/services/${id}`,
+            url: `https://apibrujasblancas.venatici.cl/services/${id}`,
             headers: {}
         };
 
         axios(config)
             .then(function (response) {
-                const mainImage = response.data.mainImage;
+                const mainImage = response.data.image;
                 const title = response.data.title;
-                const description = response.data.description;
+                const description = response.data.subtitle;
                 const images = response.data.images;
                 setMainImage(mainImage)
                 setTitle(title)
@@ -60,7 +60,7 @@ function ServiceDetail() {
             })
     }, [id])
 
-    //console.log(mainImage)
+    console.log(mainImage)
     return (
         <DetailsContainer>
             <DetailsHeader bg={mainImage !== undefined ? mainImage.replace('https:', '') : defaultImg}>
@@ -74,13 +74,13 @@ function ServiceDetail() {
                 <DescriptionContent>
                     <Paragraph>{description}</Paragraph>
                 </DescriptionContent>
-                {(images !== undefined) ? <></> :
+                {/*(images !== undefined) ? <></> :
                     <>
                         <SubTitleContent bg={detailSubTitleTracing}>
                             <SubTitle>Fotos</SubTitle>
                         </SubTitleContent>
                         <PhotosContent>
-                            {/*<Swiper slidesPerView={3} spaceBetween={30} pagination={{
+                            <Swiper slidesPerView={3} spaceBetween={30} pagination={{
                                 "clickable": true}} className="mySwiper">
                                 <SwiperSlide>Slide 1</SwiperSlide>
                                 <SwiperSlide>Slide 2</SwiperSlide>
@@ -91,11 +91,11 @@ function ServiceDetail() {
                                 <SwiperSlide>Slide 7</SwiperSlide>
                                 <SwiperSlide>Slide 8</SwiperSlide>
                                 <SwiperSlide>Slide 9</SwiperSlide>
-                            </Swiper>*/}
+                            </Swiper>
                         </PhotosContent>
-                    </>}
+                    </>*/}
                 <ButtonsContent>
-                    <ButtonAgenda href="https://esteticaandaluz.agendapro.com/cl/workflow?local=3536"><Paragraph>¡Agenda tu hora!</Paragraph></ButtonAgenda>
+                    <ButtonAgenda href="https://wa.me/56992387070"><Paragraph>¡Agenda tu hora!</Paragraph></ButtonAgenda>
                     {/*<ButtonWhatsapp href="https://api.whatsapp.com/send?phone=56987654321"><ReactSVG src={iconWatsapp} /> <Paragraph>Whatsapp</Paragraph></ButtonWhatsapp>*/}
                 </ButtonsContent>
             </DetailsBody>

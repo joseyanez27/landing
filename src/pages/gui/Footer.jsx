@@ -54,7 +54,7 @@ function Footer() {
             .catch(function (error) {
                 console.log(error);
             });
-        setAboutUs('[FALTA INFORMACION DEL EMPRENDIMIENTO]')
+        setAboutUs('Estética atendida por su dueña, con más de 12 años de experiencia en el rubro de la belleza')
     }, [])
 
     return (
