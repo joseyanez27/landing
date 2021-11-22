@@ -51,7 +51,7 @@ function Home() {
                     </div>
                 </BodyContent>
                 {/* TODO: Agregar redireccion a whatsapp */}
-                <HomeButton href="">¡Contáctanos!</HomeButton>
+                <HomeButton target="_blank" href="https://wa.me/56992387070">¡Contáctanos!</HomeButton>
             </HomeBody>
         </HomeContainer>
     )

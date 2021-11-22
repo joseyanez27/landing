@@ -95,7 +95,7 @@ function ServiceDetail() {
                         </PhotosContent>
                     </>*/}
                 <ButtonsContent>
-                    <ButtonAgenda href="https://wa.me/56992387070"><Paragraph>¡Agenda tu hora!</Paragraph></ButtonAgenda>
+                    <ButtonAgenda target="_blank" href="https://wa.me/56992387070"><Paragraph>¡Agenda tu hora!</Paragraph></ButtonAgenda>
                     {/*<ButtonWhatsapp href="https://api.whatsapp.com/send?phone=56987654321"><ReactSVG src={iconWatsapp} /> <Paragraph>Whatsapp</Paragraph></ButtonWhatsapp>*/}
                 </ButtonsContent>
             </DetailsBody>

@@ -162,7 +162,7 @@ function Contact() {
                     </Field>
                     <ButtonsContent>
                         {/* TODO: Agregar redireccionamiento a whatsapp */}
-                        <ButtonWhatsapp href={contactWhatsapp}><ReactSVG src={iconWhatsapp} />Whatsapp</ButtonWhatsapp>
+                        <ButtonWhatsapp target="_blank" href={contactWhatsapp}><ReactSVG src={iconWhatsapp} />Whatsapp</ButtonWhatsapp>
                         <ButtonSend type="submit">Enviar</ButtonSend>
                     </ButtonsContent>
                 </ContactForm>
