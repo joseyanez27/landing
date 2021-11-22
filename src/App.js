@@ -7,6 +7,7 @@ function App() {
     <>
       <Helmet>
         <title>Estética Brujas Blancas</title>
+        <meta name="description" content="Estética Brujas Blancas"/>
       </Helmet>
 
       <GlobalStyle />
