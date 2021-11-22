@@ -10,7 +10,7 @@ export const ServiceItemContainer = styled.div`
     gap: 16px;
 
     @media screen and (max-width: ${size.sm}) {
-        margin: 0px 0px 120px 0px;
+        margin: 0px 0px 150px 0px;
     }
 `;
 
@@ -34,7 +34,7 @@ export const ServiceContent = styled.div`
 
 export const ServiceCard = styled.div`
     width: 280px;
-    height: 250px;
+    height: 200px;
     box-shadow: 0px 0px 5px rgba(151, 151, 151, 1);
     background: #FFF;
     padding: 16px 0px 0px 0px;
@@ -43,10 +43,10 @@ export const ServiceCard = styled.div`
     align-items: center;
     flex-direction: column;
     position: relative;
-    bottom: -200px;
+    bottom: -250px;
 
     @media screen and (max-width: ${size.sm}) {
-        bottom: -170px;
+        bottom: -250px;
         width: 280px;
         height: 200px;
         h2 {
